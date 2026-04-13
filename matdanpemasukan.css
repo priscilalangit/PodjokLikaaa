@@ -1,0 +1,178 @@
+.back-btn{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #ff6ec7, #ffd93d);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  z-index: 9999;
+}
+:root {
+  --orange: #F08C21;
+  --pink: #E36888;
+  --blue: #6698CC;
+  --green: #B4B534;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins';
+  background: url("Lika!.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px;
+}
+
+/* JUDUL BESAR UNIK */
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 38px;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 0px var(--orange), 6px 6px 0px rgba(0,0,0,0.1);
+    margin: 60px 0 30px;
+    text-transform: uppercase;
+}
+
+/* HOVER FOTO JUDUL */
+.hero-title {
+  width: 400px;
+  margin-bottom: 20px;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+.hero-title:hover {
+    transform: scale(1.1) rotate(-2deg);
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 25px;
+}
+
+.card {
+  background: #B4B534;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-6px) scale(1.02); }
+
+.desc {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+iframe { width: 100%; height: 260px; border: none; border-radius: 15px; }
+
+/* UKURAN DIAGRAM TETAP ASLI (800px) */
+.diagram-wrap {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.diagram-card {
+  position: relative;
+  width: 800px; 
+  height: 300px; 
+  border-radius: 25px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+.diagram-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  background: #f5f5f5;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+.diagram-card .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--orange);
+  color: white;
+  padding: 15px;
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.4s;
+  text-align: center;
+}
+
+.diagram-card:hover { transform: translateY(-8px) scale(1.03); }
+.diagram-card:hover .overlay { opacity: 1; transform: translateY(0); }
+
+.kesimpulan {
+  margin-top: 50px;
+  background: var(--pink);
+  color: white;
+  padding: 30px;
+  border-radius: 25px;
+  line-height: 1.6;
+  transition: 0.3s;
+}
+.kesimpulan:hover { transform: scale(1.05); }
+
+/* MASCOT */
+.mascot-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    text-align: center;
+}
+.mascot-img { width: 100px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); }
+#mascot-chat {
+    display: none;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid var(--orange);
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #333;
+    width: 150px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 140px;
+  right: 20px;
+  display: none;
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
