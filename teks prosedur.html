@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Full Procedures - Podjok Lika</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+    .back-btn{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #ff6ec7, #ffd93d);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  z-index: 9999;
+}
+:root {
+  --hibiscus: #E36888;
+  --sunset: #F08C21;
+  --ocean: #4facfe;
+  --sand: #ffd93d;
+  --bg-light: #f0faff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--ocean), var(--hibiscus));
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  border-bottom: 8px solid var(--sand);
+}
+
+.header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(40px, 8vw, 60px);
+  margin: 0;
+  text-shadow: 4px 4px 0px var(--sunset);
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* --- CARD STYLE WITH HOVER --- */
+.card {
+  background: white;
+  border-radius: 40px;
+  border: 4px solid var(--hibiscus);
+  padding: 50px 40px;
+  margin-bottom: 100px;
+  box-shadow: 15px 15px 0px var(--sand);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.01);
+  box-shadow: 25px 25px 0px var(--sunset);
+}
+
+.card.blue-theme {
+  border-color: var(--ocean);
+  box-shadow: 15px 15px 0px #bdeaff;
+}
+
+.card.blue-theme:hover {
+  box-shadow: 25px 25px 0px var(--ocean);
+}
+
+/* --- POLAROID --- */
+.polaroid {
+  width: 240px;
+  background: white;
+  padding: 12px 12px 35px 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: rotate(-3deg);
+  margin: -90px auto 40px;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .polaroid {
+  transform: rotate(0deg) scale(1.1);
+}
+
+.photo-space {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #f8f8f8;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-weight: 600;
+}
+
+/* --- TYPOGRAPHY --- */
+.title {
+  font-family: 'Fredoka', cursive;
+  font-size: clamp(30px, 5vw, 45px);
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--hibiscus);
+}
+
+.blue-theme .title { color: var(--ocean); }
+
+.intro-text {
+  background: #fffafa;
+  padding: 25px;
+  border-radius: 25px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  border-left: 6px solid var(--hibiscus);
+  text-align: justify;
+}
+
+.blue-theme .intro-text { background: #f0faff; border-left-color: var(--ocean); }
+
+/* --- INGREDIENTS GRID --- */
+.grid-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.list-box h4 {
+  font-family: 'Fredoka', cursive;
+  font-size: 22px;
+  color: var(--sunset);
+  margin-bottom: 15px;
+  text-decoration: underline wavy var(--sand);
+}
+
+ul { padding-left: 20px; line-height: 1.7; }
+
+/* --- FULL STEPS LIST --- */
+.steps-title {
+  font-family: 'Fredoka', cursive;
+  background: var(--sunset);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.step-row {
+  display: flex;
+  gap: 20px;
+  padding: 18px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.step-row:hover {
+  background: white;
+  border-color: var(--hibiscus);
+  padding-left: 30px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+}
+
+.blue-theme .step-row:hover { border-color: var(--ocean); }
+
+.step-num {
+  background: var(--sand);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .grid-info { grid-template-columns: 1fr; }
+  .card { padding: 40px 20px; }
+}
+</style>
+</head>
+<body>
+<button onclick="goBackHome()" class="back-btn">← Back</button>
+<header class="header">
+    <h1>Podjok Lika Kitchen & Craft</h1>
+    <p style="letter-spacing: 4px; font-weight: 500;">BEYOND CREATIVITY</p>
+</header>
+
+<div class="container">
+
+    <article class="card">
+        <div class="polaroid">
+            <div class="photo-space"> <img src="kimbab.png"></div>
+            <p style="text-align:center; font-family:'Pacifico'; margin:10px 0 0; color:var(--hibiscus)">Healthy Biotech</p>
+        </div>
+
+        <h2 class="title">How To Make Likbap</h2>
+        
+        <div class="intro-text">
+            Our Biotechnology product is <b>Likbap</b>. Likbap is a delicious Korean Kimbap made with fluffy white rice, rolled with fragrant toasted nori, and fresh fillings like cucumber, carrot, chicken, and egg roll. 
+            <br><br>
+            We chose Likbap because it contains <b>Kimchi</b>, a biotechnology product involving biological fermentation. Microorganisms transform raw vegetables into more durable, nutritious food by breaking down sugars into organic acids. It's healthy, MSG-free, and perfect for teenagers!
+        </div>
+
+        <div class="grid-info">
+            <div class="list-box">
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>600g Chinese cabbage (3 medium)</li>
+                    <li>Salt, 2 carrots, Spring onions</li>
+                    <li>1 cup water, 1 tbsp rice flour</li>
+                    <li>2 tsp sugar, 5 cloves garlic</li>
+                    <li>1/4 onion, 1 finger-length ginger</li>
+                    <li>5 tbsp fish sauce, 6 tbsp chili powder</li>
+                    <li>Sesame oil, 10 sheets seaweed</li>
+                    <li>1 bowl rice, 30g chicken slice</li>
+                    <li>2 spoon ketchup</li>
+                </ul>
+            </div>
+            <div class="list-box">
+                <h4>Tools</h4>
+                <ul>
+                    <li>Spatula & Bowl</li>
+                    <li>Table spoon & Tea spoon</li>
+                    <li>Pan & Sushi roller</li>
+                    <li>Knife</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="steps-section">
+            <h3 class="steps-title">Instructions</h3>
+            <div class="step-row"><div class="step-num">1</div><span>Slice mustard greens lengthwise (vertically) and wash thoroughly.</span></div>
+            <div class="step-row"><div class="step-num">2</div><span>Coat the surface and between leaves with salt evenly.</span></div>
+            <div class="step-row"><div class="step-num">3</div><span>Let the coated greens sit for two hours.</span></div>
+            <div class="step-row"><div class="step-num">4</div><span>Stir them every 30 minutes.</span></div>
+            <div class="step-row"><div class="step-num">5</div><span>While waiting, grate the carrots lengthwise.</span></div>
+            <div class="step-row"><div class="step-num">6</div><span>Chop the spring onions.</span></div>
+            <div class="step-row"><div class="step-num">7</div><span>Combine rice flour and water in a pan until well mixed.</span></div>
+            <div class="step-row"><div class="step-num">8</div><span>Bring the mixture to a boil.</span></div>
+            <div class="step-row"><div class="step-num">9</div><span>Add sugar, stir until dissolved and thick. Turn off heat & set aside.</span></div>
+            <div class="step-row"><div class="step-num">10</div><span>Finely chop the garlic, onion, and ginger.</span></div>
+            <div class="step-row"><div class="step-num">11</div><span>Mix them into the rice flour mixture.</span></div>
+            <div class="step-row"><div class="step-num">12</div><span>Add fish sauce and chili powder. Stir well.</span></div>
+            <div class="step-row"><div class="step-num">13</div><span>Mix the carrots and spring onions into the mixture.</span></div>
+            <div class="step-row"><div class="step-num">14</div><span>Thoroughly wash the mustard greens after 2 hours.</span></div>
+            <div class="step-row"><div class="step-num">15</div><span>Rub the seasoning mixture evenly over the mustard greens.</span></div>
+            <div class="step-row"><div class="step-num">16</div><span>Store in an airtight container at room temperature for two days.</span></div>
+            <div class="step-row"><div class="step-num">17</div><span>Wait until water foams; the kimchi is ready!</span></div>
+            <div class="step-row"><div class="step-num">18</div><span>Clean the sushi roller.</span></div>
+            <div class="step-row"><div class="step-num">19</div><span>Place 1 sheet of seaweed on top of the roller.</span></div>
+            <div class="step-row"><div class="step-num">20</div><span>Put about 4 tablespoons of rice.</span></div>
+            <div class="step-row"><div class="step-num">21</div><span>Add kimchi, carrot, cucumber, and chicken on top.</span></div>
+            <div class="step-row"><div class="step-num">22</div><span>Ensure it is neat, then roll it up with the sushi roller.</span></div>
+            <div class="step-row"><div class="step-num">23</div><span>The Likbap is ready to eat!</span></div>
+        </div>
+    </article>
+
+    <article class="card blue-theme">
+        <div class="polaroid" style="transform: rotate(3deg);">
+            <div class="photo-space">    <img src="hair.png"></div>
+            <p style="text-align:center; font-family:'Pacifico'; margin:10px 0 0; color:var(--ocean)">Handmade Craft</p>
+        </div>
+
+        <h2 class="title">How To Make Blup Blop Bag</h2>
+        
+        <div class="intro-text">
+            <b>Blup Blop Bag</b> is a complete hair kit in one handy bag! It includes a mini comb, mirror, and clips. We made this because many students in Sanur need to pay more attention to their hair's neatness. Lightweight, unique, and stylish!
+        </div>
+
+        <div class="grid-info">
+            <div class="list-box">
+                <h4>Ingredients</h4>
+                <ul>
+                    <li>1-2 Meter Batik Fabric (Lombok, NTB)</li>
+                    <li>1 Roll Of Red Thread</li>
+                    <li>2 Roll Of Macrame Rope</li>
+                </ul>
+            </div>
+            <div class="list-box">
+                <h4>Tools</h4>
+                <ul>
+                    <li>Sewing Machine & Thread Remover</li>
+                    <li>Ruler & Scissors</li>
+                    <li>Newspaper, Pencil & Sewing Chalk</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="steps-section">
+            <h3 class="steps-title" style="background:var(--ocean)">Paper Template Steps</h3>
+            <div class="step-row"><div class="step-num">1</div><span>Sketch a creative bag design onto newspaper using a pencil and ruler.</span></div>
+            <div class="step-row"><div class="step-num">2</div><span>Cut out the final shape carefully to create the master template.</span></div>
+            
+            <h3 class="steps-title" style="background:var(--ocean); margin-top:30px;">Final Construction</h3>
+            <div class="step-row"><div class="step-num">1</div><span>Trace the Batik fabric using sewing chalk according to the template.</span></div>
+            <div class="step-row"><div class="step-num">2</div><span>Cut the fabric pieces precisely following the chalk lines.</span></div>
+            <div class="step-row"><div class="step-num">3</div><span>Sew all pieces together using the sewing machine and red thread.</span></div>
+            <div class="step-row"><div class="step-num">4</div><span>Attach macrame rope to the top for a sturdy and stylish handle.</span></div>
+            <div class="step-row"><div class="step-num">5</div><span>Remove excess or loose threads with a thread remover.</span></div>
+            <div class="step-row"><div class="step-num">6</div><span>The Blup Blop Bag is ready to keep your hair accessories organized!</span></div>
+        </div>
+    </article>
+
+</div>
+
+<footer style="text-align:center; padding:50px; color:#aaa; font-size:14px;">
+    Proudly created for Podjok Lika 🌴
+</footer>
+<script>
+    function goBackHome(){
+  window.location.href = "Untitled-1.html"; 
+}
+</script>
+</body>
+</html>

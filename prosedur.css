@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>How To Make Likbap - Podjok Lika</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --hibiscus: #E36888;
+  --sunset: #F08C21;
+  --ocean: #4facfe;
+  --sand: #ffd93d;
+  --glass: rgba(255, 255, 255, 0.9);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f0faff;
+  color: #333;
+}
+
+/* --- BANNER AREA --- */
+.recipe-header {
+  background: linear-gradient(135deg, var(--ocean), var(--hibiscus));
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  border-bottom: 8px solid var(--sand);
+}
+
+.recipe-header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 65px;
+  margin: 0;
+  text-shadow: 4px 4px 0px var(--sunset);
+}
+
+/* --- PHOTO SPOT (POLAROID STYLE) --- */
+.photo-spot {
+  width: 300px;
+  background: white;
+  padding: 15px 15px 50px 15px;
+  margin: -40px auto 40px;
+  transform: rotate(-2deg);
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  z-index: 10;
+  position: relative;
+}
+
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  font-family: 'Fredoka', cursive;
+  color: #999;
+}
+
+/* --- CONTENT BOXES --- */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-box {
+  background: white;
+  border: 3px solid var(--hibiscus);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 12px 12px 0px var(--sand);
+}
+
+.judul-rainbow {
+  font-family: 'Fredoka', cursive;
+  font-size: 38px;
+  margin-top: 0;
+  background: linear-gradient(90deg, var(--hibiscus), var(--sunset));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- INGREDIENTS & TOOLS GRID --- */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.list-card {
+  background: #fff9e6;
+  border-radius: 20px;
+  padding: 25px;
+  border-left: 8px solid var(--sunset);
+}
+
+.list-card h3 {
+  font-family: 'Fredoka', cursive;
+  color: var(--sunset);
+  margin-top: 0;
+}
+
+.list-card ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+/* --- STEPS NUMBERING --- */
+.step-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #f0f0f0;
+  transition: 0.3s;
+}
+
+.step-item:hover {
+  border-color: var(--ocean);
+  transform: scale(1.02);
+}
+
+.step-number {
+  background: var(--ocean);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  box-shadow: 3px 3px 0px var(--sand);
+}
+
+.step-text {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .grid-container { grid-template-columns: 1fr; }
+  .recipe-header h1 { font-size: 45px; }
+}
+</style>
+</head>
+<body>
+
+<header class="recipe-header">
+    <p style="letter-spacing: 3px; font-weight: 600;">BIOTECHNOLOGY PROJECT</p>
+    <h1>How To Make Likbap</h1>
+</header>
+
+<div class="photo-spot">
+    <div class="photo-placeholder">
+        <span>📸 Taruh Foto Likbap Di Sini</span>
+    </div>
+    <p style="text-align: center; font-family: 'Pacifico'; color: var(--hibiscus); margin-top: 15px;">Tasty & Healthy!</p>
+</div>
+
+<div class="container">
+
+    <section class="section-box">
+        <h2 class="judul-rainbow">Why Likbap? 🍣</h2>
+        <p style="text-align: justify;">
+            Our Biotechnology product is <b>Likbap</b>. Likbap is a delicious Korean Kimbap made with fluffy white rice inside, rolled with fragrant toasted nori, and a selection of fresh filings such as cucumber, carrot, chicken, egg roll. 
+            <br><br>
+            We chose to make Likbap because it meets the criteria for a biotech product where inside the Likbap there is <b>Kimchi</b>. Kimchi involves a biological fermentation that involves microorganisms. These microorganisms transform raw vegetables into a more durable and nutritious food by breaking down sugars into organic acids like lactic acetic acid. We hope to attract teenagers to consume more vegetables and stay healthy!
+        </p>
+    </section>
+
+    <section class="grid-container">
+        <div class="list-card">
+            <h3>Ingredients 🥬</h3>
+            <ul>
+                <li>600g Chinese cabbage</li>
+                <li>Salt, 2 carrots, Spring onions</li>
+                <li>1 cup water & 1 tbsp rice flour</li>
+                <li>2 tsp sugar, 5 cloves garlic</li>
+                <li>1/4 onion, 1 finger ginger</li>
+                <li>5 tbsp fish sauce, 6 tbsp chili powder</li>
+                <li>Sesame oil & 10 sheets seaweed</li>
+                <li>1 bowl rice, 30g chicken slice</li>
+                <li>2 spoon ketchup</li>
+            </ul>
+        </div>
+        <div class="list-card" style="border-left-color: var(--ocean);">
+            <h3 style="color: var(--ocean);">Tools 🛠️</h3>
+            <ul>
+                <li>Spatula & Bowl</li>
+                <li>Table spoon & Tea spoon</li>
+                <li>Pan & Knife</li>
+                <li>Sushi roller</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section-box" style="margin-top: 40px;">
+        <h2 class="judul-rainbow">Cooking Steps 👩‍🍳</h2>
+        
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-text">Slice the mustard greens vertically, wash thoroughly, and coat each leaf with salt. Let it sit for 2 hours (stir every 30 mins).</div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-text">Grate carrots and chop spring onions while waiting.</div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-text">Mix rice flour and water in a pan, bring to boil. Add sugar, stir until thick, then turn off heat.</div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-text">Add chopped garlic, onion, ginger, fish sauce, and chili powder into the mixture. Mix with carrots and spring onions.</div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">5</div>
+            <div class="step-text">Rub the seasoning mixture onto washed mustard greens. Store in airtight container for 2 days at room temperature.</div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">6</div>
+            <div class="step-text">Once the kimchi is ready, place 1 sheet of seaweed on the sushi roller. Spread 4 tbsp of rice.</div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">7</div>
+            <div class="step-text">Add kimchi, carrot, cucumber, and chicken. Roll it up neatly. Your Likbap is ready!</div>
+        </div>
+
+    </section>
+
+</div>
+
+<footer style="text-align: center; padding: 40px; color: #888;">
+    <p>Handmade with Love by Kelompok Podjok Lika 🌴</p>
+</footer>
+
+</body>
+</html>
